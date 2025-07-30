@@ -8,7 +8,7 @@ This is the Angular frontend application for the TaxCalculator project. It provi
 
 - Input gross annual salary
 - Call backend API to calculate tax
-- Display annual and monthly gross salary, net salary, and tax paid
+- Display gross annual salary, gross monthly salary, net annual salary, net monthly salary, annual tax paid and monthly tax paid
 - Responsive and user-friendly interface
 
 ---
@@ -17,7 +17,7 @@ This is the Angular frontend application for the TaxCalculator project. It provi
 
 - [Node.js](https://nodejs.org/) (version 16 or higher recommended)
 - [Angular CLI](https://angular.io/cli) installed globally (`npm install -g @angular/cli`)
-- Backend API running and accessible (e.g., at `http://localhost:8080`)
+- Backend API running and accessible (e.g., at `http://localhost:5001`)
 
 ---
 
@@ -38,15 +38,19 @@ This is the Angular frontend application for the TaxCalculator project. It provi
 
 3. **Configure API URL**
 
-   Update the API URL in the service (usually in `src/app/services/tax.service.ts`):
+   Update the API URL in the service (usually in `src/app/environments/environment.ts`):
 
    ```typescript
-   private apiUrl = 'http://localhost:8080/api/tax';
+   private apiUrl = 'https://localhost:5001/api/tax';
    ```
 
    Adjust the port or domain to match your backend API endpoint.
 
-4. **Run the app**
+4. **RedisCache configuration**
+   docker-compose up --build
+   docker exec -it redis-cache redis-cli
+
+5. **Run the app**
 
    ```bash
    ng serve
