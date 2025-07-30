@@ -1,59 +1,121 @@
-# TaxcalculatorUi
+# TaxCalculator.UI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+This is the Angular frontend application for the TaxCalculator project. It provides a simple UI to input a gross annual salary and displays the calculated tax results by calling the backend API.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
+
+- Input gross annual salary
+- Call backend API to calculate tax
+- Display annual and monthly gross salary, net salary, and tax paid
+- Responsive and user-friendly interface
+
+---
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (version 16 or higher recommended)
+- [Angular CLI](https://angular.io/cli) installed globally (`npm install -g @angular/cli`)
+- Backend API running and accessible (e.g., at `http://localhost:8080`)
+
+---
+
+## Setup and Run Locally
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <your-angular-repo-url>
+   cd TaxCalculator.UI
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Configure API URL**
+
+   Update the API URL in the service (usually in `src/app/services/tax.service.ts`):
+
+   ```typescript
+   private apiUrl = 'http://localhost:8080/api/tax';
+   ```
+
+   Adjust the port or domain to match your backend API endpoint.
+
+4. **Run the app**
+
+   ```bash
+   ng serve
+   ```
+
+   The app will be available at [http://localhost:4200](http://localhost:4200).
+
+---
+
+## Building for Production
+
+To build a production-ready bundle, run:
 
 ```bash
-ng serve
+ng build --prod
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The output will be in the `dist/` folder, which you can deploy to any static hosting.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Testing
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Run unit tests using:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+This launches the Karma test runner.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
+## CORS Configuration
+
+Make sure the backend API has CORS enabled for `http://localhost:4200` or your deployed frontend URL.
+
+---
+
+## Technologies Used
+
+- Angular 16+
+- TypeScript
+- RxJS
+- Angular Material (if used for UI components)
+- HTTPClient for API calls
+
+---
+
+## Folder Structure
+
+```
+src/
+├── app/
+│   ├── app.ts    # Root module
+│   ├── app.*  # Root component files
+│   └── ...
+├── environments/        # Environment config files
+└── index.html           # Main HTML page
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## Notes
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Update the API endpoint in the service if your backend runs on a different URL or port.
+- If using Docker for frontend/backend, update URLs accordingly.
+- You can extend the UI and services for more features or error handling.
+
+---
+
+Would you like me to generate Angular service or component files next?

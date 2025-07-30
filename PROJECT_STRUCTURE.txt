@@ -1,0 +1,9 @@
+src/
+├── app/
+│   ├── app.ts    # Root module
+│   ├── app.*  # Root component files
+│   └── ...
+├── environments/        # Environment config files
+└── index.html           # Main HTML page
+└── main.ts           
+└── styles.css           

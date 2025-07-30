@@ -1,0 +1,19 @@
+input {
+  padding: 0.5rem;
+  margin: 1rem 0;
+  width: 90%;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.container {
+  border: 1px solid #323232;
+  max-width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+}
